@@ -11,7 +11,8 @@
 </head>
 <body>
     <?php 
-        echo '<h1>Hello world  </h1>';
+        echo 'Comando echo <br>';
+        print 'Comando print <hr>';
     ?>
 </body>
 </html>
