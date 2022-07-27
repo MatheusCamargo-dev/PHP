@@ -11,24 +11,43 @@
 </head>
 <body>
     <?php 
-        // variaveis const
-
-        define('BD_URL', 'endereco_bd_dev');
-        define('BD_USER','usuario_dev');
-        define('BD_SENHA','senha_dev');
-        if (BD_URL=='endereco_bd_dev'){
-            echo 'true';
+        // ==
+        echo '2 int é igual a 2 String: ';
+        if (2 == '2'){
+            echo 'True';
         }
         else{
             echo 'false';
         }
-        
-        echo '<br>';
-        echo BD_URL;
-        echo '<br>';
-        echo BD_USER;
-        echo '<br>';
-        echo BD_SENHA;
+        echo '<br> 2 int é idêntico a 2 String: ';
+        // ===
+        if(2 === '2'){
+            echo 'True';
+        }
+        else{
+            echo 'false';
+        }
+
+        echo '<br><br>';
+        // diferente !=
+        // !=
+        echo '2 int é diferente de 2 String: ';
+        if (2 != '2'){
+            echo 'True';
+        }
+        else{
+            echo 'false';
+        }
+        echo '<br> 2 int é não idêntico a 2 String: ';
+        // !==
+        if(2 !== '2'){
+            echo 'True';
+        }
+        else{
+            echo 'false';
+        }
+        // (menor) < e (maior) >
+        // (maior e igual) >= e (menor e igual) <=
         
     ?>
 </body>
