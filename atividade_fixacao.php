@@ -17,21 +17,16 @@
         $usuario_possui_cartao_loja = false;
         $valor_compra = 225;
         $valor_frete = 200;
-        /*se a variavel representar um valor boolean não é necessário comparar com valores boolean, pois ela já retorna o valor boolean como parâmetro de comparação
-        exemplo: if ($usuario_possui_cartao_loja){
-                    $resp = 'SIM';
-                }
-        É IGUAL A: 
-                if ($usuario_possui_cartao_loja == true){
-                    $resp = 'SIM';
-                }
+        //  <condição> ? true : false
+        $resp = $usuario_possui_cartao_loja ? 'SIM' : 'NAO';
+        /*
+            if ($usuario_possui_cartao_loja){
+                $resp = 'SIM';
+            }
+            else{
+                $resp = 'NÃO';
+            }
         */
-        if ($usuario_possui_cartao_loja){
-            $resp = 'SIM';
-        }
-        else{
-            $resp = 'NÃO';
-        }
         echo "Possui cartão: $resp <br> Valor de compra: $valor_compra <br>
         Valor de frete $valor_frete <br>";
         if($usuario_possui_cartao_loja == true && $valor_compra >= 100){
@@ -53,6 +48,8 @@
         }
         echo "<br><br>Possui cartão: $resp <br> Valor de compra: $valor_compra <br>
         Valor de frete $valor_frete <br>";
+        $valor_frete -= $usuario_possui_cartao_loja && $valor_compra >= 300 ? ($valor_frete*90)/100 : ($usuario_possui_cartao_loja && $valor_compra >= 200 ? ($valor_frete*50)/100 : 0) ;
+        /*
         if($usuario_possui_cartao_loja && $valor_compra >= 300){
             $valor_frete -= ($valor_frete*90)/100;
             echo "Parabéns você recebeu um desconto de 90% seu frete custa: $valor_frete";
@@ -64,6 +61,8 @@
         else{
             echo "Você não recebeu um desconto, seu valor de frete custa: $valor_frete";
         }
+        */
+        echo "Parabéns você recebeu um desconto seu frete custa: $valor_frete";
         
     ?>
 </body>
