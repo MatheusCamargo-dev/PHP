@@ -74,6 +74,7 @@
             echo '<h1>'.$registros[$cont]['titulo'].'</h1><br>';
             echo '<p>'.$registros[$cont]['conteudo'].'</p><br>';
         }
+        echo '<hr>';
 
     ?>
 </body>

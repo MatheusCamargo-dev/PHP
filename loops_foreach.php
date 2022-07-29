@@ -19,40 +19,31 @@
 <body>
     <?php 
         // Praticando percorrendo Arrays com loops
-        $registros = [
-            0 => [
-            'titulo' => 'Titulo notícia 1',
-            'conteudo' => 'conteudo notícia 1',
-            ],
-            1 => [
-            'titulo' => 'Titulo notícia 2',
-            'conteudo' => 'conteudo notícia 2',
-            ],
-            2 => [
-                'titulo' => 'Titulo notícia 3',
-                'conteudo' => 'conteudo notícia 3',
-            ],
-            3 => [
-                'titulo' => 'Titulo notícia 4',
-                'conteudo' => 'conteudo notícia 4',
-            ],
-            4 => [
-                'titulo' => 'Titulo notícia 5',
-                'conteudo' => 'conteudo notícia 5',
-            ],
-        ];
-        $items = [
+        
+        $itens = [
             'sofá',
             'mesa',
             'cadeira',
-            'fogão',
+            'churrasqueira',
             'geladeira',
         ];
         
         echo '<pre>';
-        print_r ($items);
+        print_r ($itens);
         echo '</pre>';
         echo '<hr>';
+
+        // For each é uma estrutura de repetição para arrays e objetos
+        // a variavel de valores irá armazenar os valores obtidos no array 
+        // foreach($array as $variavel_de_valores){}
+        foreach($itens as $item){
+            echo "$item";
+            if ($item == 'churrasqueira'){
+                echo ', tá pegando fogo bicho';
+            }
+            echo "<br>";
+        }
+
 
     ?>
 </body>
