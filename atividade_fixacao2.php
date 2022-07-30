@@ -58,8 +58,15 @@
                 echo "-";
             }
         }
-        
+        echo '<hr>';
 
+        $array1 = [1,2,3];
+        $array2 = [15,20,30];
+        $x = 50;
+        $b = 0;
+        $x += $array1[$b]*$array2[$b];
+
+        echo $x;
     ?>
 </body>
 </html>
