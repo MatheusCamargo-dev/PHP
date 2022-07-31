@@ -11,7 +11,7 @@
 </head>
 <body>
     <?php 
-        echo '<h1>Hello world  </h1>';
+        $oi = 21;
     ?>
 </body>
 </html>
