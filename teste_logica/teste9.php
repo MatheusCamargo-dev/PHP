@@ -55,7 +55,7 @@
                         array_push($bi_array[$i],$random);
                         $cont++;
                     }
-
+                    
                 }
                 $cont=0;
             }
@@ -64,6 +64,7 @@
             echo '<pre>';
             print_r ($bi_array);
             echo '<pre><hr>';
+
             echo '<pre>';
             print_r ($elementos_da_array);
             echo '<pre>';
