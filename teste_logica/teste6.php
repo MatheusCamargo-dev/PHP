@@ -55,9 +55,10 @@
                     echo "<td class='impar'> $random </td>";
                 }
                 ++$td;
+                // se a quantidade de colunas for 10 então fechar a linha
                 if ($td == 10 ){
                     echo '</tr>';
-                    $td = 0;
+                    $td = 0; //zerando o contador de colunas quando chega em 10
                 }
             }
             echo '</table>';

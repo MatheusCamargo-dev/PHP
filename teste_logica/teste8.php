@@ -20,6 +20,7 @@
             */
 
             $primo = 0;
+            // laço de repetição para obtenção do ultimo número primo menor que 500
             for ($i=0;$i < 500;$i++){
                 $divisores = 0;
                 for($j=$i; $j>=1; $j--){
@@ -34,6 +35,8 @@
             $a = 0;
             $b = 1;
             $fibonacci = 0;
+
+            // laço de repetição para a impressão do fibonacci até o número primo capturado
             while($fibonacci < $primo){
                 echo "$fibonacci <br>";
                 $fibonacci = ($a+$b);
