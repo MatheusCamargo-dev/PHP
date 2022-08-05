@@ -28,10 +28,12 @@
                         $divisores++;
                     }
                 }
+                
                 if ($divisores == 2){
                     $primo = $i;
                 }
             }
+
             $a = 0;
             $b = 1;
             $fibonacci = 0;

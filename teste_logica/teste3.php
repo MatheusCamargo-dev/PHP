@@ -26,7 +26,7 @@
             echo substr($texto, $x, y).'<br>';
             // echo strlen(substr($texto, $x, y));
             echo '<hr>';
-            $x += 50;
+            $x += 50;   
             // a função strlen() retorna a quantidade de caracteres do parâmetro informado
         }while($x < (strlen($texto)));
        

@@ -41,6 +41,7 @@
 
             $random; // variavel pra armazenar números random
             $td = 0; // contador de colunas 
+            
             echo '<table class="table_style">';
             for($cont=0;$cont < 100;$cont++){
                 // a cada 10 colunas criar uma linha

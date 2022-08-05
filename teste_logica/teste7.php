@@ -32,7 +32,7 @@
             }
 
             echo 'Valor de entrega: '.valorDeEntrega(1);
-            echo '<br>Valor de entrega: '.valorDeEntrega(10);
+            echo '<br>Valor de entrega: '.valorDeEntrega(10);   
             echo '<br>Valor de entrega: '.valorDeEntrega(16);
 
            

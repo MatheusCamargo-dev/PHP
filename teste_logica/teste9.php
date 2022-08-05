@@ -31,15 +31,19 @@
             //função para verificar todos os critérios e retornar se é invalido
             function verificarCriterios($array,$random,$cont) {
                 $invalido = false;
+
                 foreach($array as $indice => $elemento_array){    
                     if(($elemento_array == $random+1) || ($elemento_array == $random-1)){
+                        //verifica se o número aleatório tem um elemento anterior ou posterior a ele
                         if(($indice == $cont-1 || $indice == $cont+1)){
+                            //verifica se está no indice anterior ou posterior a ele
                             $invalido = true;
                         }
                     }
                 }
                 return $invalido;
             }
+
 
             for($i=0;$i<3;$i++){ //laço de repetição que vai mudando o indice da matriz para a incrementação dos valores
                 while($cont < 3){ //laço que vai se repetir 3x para geração dos valores de incrementação do indice [i] da matriz
