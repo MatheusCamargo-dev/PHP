@@ -1,20 +1,30 @@
 <?php
-    // usuarios do sistema (sem banco de dados)
+    session_start();
+    // usuarios do sistema (simulando um banco de dados)
     $usuarios_app = [
         array('email' => 'teste@teste.com', 'senha' => '123456'),
         array('email' => 'user@teste.com.br', 'senha' => 'abcd'),
     ];
 
-    echo '<pre>';
-    print_r ($usuarios_app);
-    echo '</pre>';
+    $usuario_autenticado = false; // variavel de autenficação
 
-    print_r ($_POST);
-    echo '<br>';
+    // condicional para verificar a autentificação
+    foreach($usuarios_app as $user){
+        if($user['email'] == $_POST['email'] && $user['senha'] == $_POST['senha']){
+            $usuario_autenticado = true;
+        }
+    }
 
-    echo $_POST['email'];
-    echo '<br>';
-    echo $_POST['senha'];
-
+    if($usuario_autenticado){
+        echo 'usuario autenticado';
+        $_SESSION['autenticado'] = true;
+    }
+    else{
+        $_SESSION['autenticado'] = false;
+        header('Location: index.php?login=erro');
+    }
+    $a=2;
+    $b=$a++;
+    echo $b;
     
 ?>
