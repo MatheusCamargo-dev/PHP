@@ -11,9 +11,12 @@
 
     <style>
       .card-home {
-        padding: 30px 0 0 0;
+        padding: 50px 0 0 0;
         width: 100%;
         margin: 0 auto;
+      }
+      body{
+        background-color: darkslategray;
       }
     </style>
   </head>

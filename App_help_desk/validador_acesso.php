@@ -3,6 +3,6 @@
     if ($_SESSION['autenticado']){
     }
     else{
-    header('Location: index.php?login=erro2');
+        header('Location: index.php?login=erro2');
     }
 ?>
