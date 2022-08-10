@@ -2,7 +2,7 @@
     require_once('validador_acesso.php');
     include('nav_bar.php');
 
-    $registro = fopen('registro.txt','r');
+    $registro = fopen('../../../app_help_desk/registro.txt','r');
     $chamados = [];
     while(!feof($registro)){
       $valores = fgets($registro);

@@ -9,7 +9,7 @@
     $texto = $_SESSION['id'].'#'.$titulo.'#'.$cliente.'#'.$categoria. '#'.$descricao. PHP_EOL;
 
     // https://www.php.net/manual/pt_BR/function.fopen.php
-    $registro = fopen('registro.txt', 'a');
+    $registro = fopen('../../../app_help_desk/registro.txt', 'a');
     fwrite($registro,$texto);
     fclose($registro);
     header('Location: abrir_chamado.php?enviado=sucesso');
