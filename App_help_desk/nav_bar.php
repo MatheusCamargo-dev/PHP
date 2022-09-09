@@ -5,7 +5,7 @@
     </a>
     <?php 
         if(isset($_SESSION['id'])){
-            echo $_SESSION['id'];
+            echo $_SESSION['perfil'];
         }
     ?>
     <?php if(isset($_SESSION['autenticado']) && $_SESSION['autenticado'] == true){?>
