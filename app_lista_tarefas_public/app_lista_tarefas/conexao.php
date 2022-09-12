@@ -11,9 +11,10 @@
                 $conexao = new PDO(
                     "mysql:host=$this->DB_HOST;dbname=$this->DB_NAME",
                     "$this->DB_USER",
-                    "$this->DB_PASSWORD",
-
+                    "$this->DB_PASSWORD"
                 );
+
+                return $conexao;
             } catch(PDOException $e){
                 echo '<p>'. $e->getMessage().'</p>';
             }
