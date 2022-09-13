@@ -16,26 +16,43 @@
 					imgLoading.src = './img/loading.gif'
 					imgLoading.className = 'rounded mx-auto d-block'
 					document.getElementById('conteudo').appendChild(imgLoading)
-
+					
 				}
+
 				let active_1 = document.getElementById('active_1')
 				let active_2 = document.getElementById('active_2')
 				let active_3 = document.getElementById('active_3')
+				let inserido = document.getElementById('inserido')
 
 				if(url == 'tarefas_pendentes.php'){
 					active_1.className = 'list-group-item active'
 					active_2.className = 'list-group-item'
 					active_3.className = 'list-group-item'
+					if(document.getElementById('inserido') != null){
+						inserido.className = ''
+						inserido.innerHTML = ''
+					}
 				}
 				if(url == 'nova_tarefa.php'){
 					active_1.className = 'list-group-item'
 					active_2.className = 'list-group-item active'
 					active_3.className = 'list-group-item'
+					if(document.getElementById('inserido') != null){
+						inserido.className = ''
+						inserido.innerHTML = ''
+					}
+
 				}
 				if(url == 'todas_tarefas.php'){
 					active_1.className = 'list-group-item'
 					active_2.className = 'list-group-item'
 					active_3.className = 'list-group-item active'
+					if(document.getElementById('inserido') != null){
+						inserido.className = ''
+						inserido.innerHTML = ''
+					}
+
+
 				}
 
 				let ajax = new XMLHttpRequest();
@@ -68,7 +85,11 @@
 				</a>
 			</div>
 		</nav>
-
+		<?php	if(isset($_GET['inclusao']) && $_GET['inclusao'] ==  1 ) { ?>
+			<div class="bg-success pt-2 text-white d-flex justify-content-center" id="inserido">
+				<h5>Tarefa inserida com sucesso!</h5>
+			</div>
+		<?php } ?>
 		<div class="container app">
 			<div class="row">
 				<div class="col-md-3 menu">
