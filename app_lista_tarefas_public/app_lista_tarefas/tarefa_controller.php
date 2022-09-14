@@ -31,5 +31,21 @@
 
         $tarefaService = new TarefaService($conexao, $tarefa);
         $tarefas = $tarefaService->recuperar();
+    } else if($acao == 'atualizar'){
+        require "./tarefa.model.php";
+        require "./tarefa.service.php";
+        require "./conexao.php";
+        
+        $tarefa = new Tarefa();
+        $tarefa->__set('id', $_POST['id']);
+        $tarefa->__set('tarefa', $_POST['tarefa']);
+
+        $conexao = new Conexao();
+
+        $tarefaService = new TarefaService($conexao, $tarefa);
+        if($atualiza = $tarefaService->atualizar()){
+            header('Location: ../index.php?atualizado=1');
+        }
+
     }
 ?>

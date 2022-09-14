@@ -62,29 +62,36 @@ function requisitarPagina(url){
     
     ajax.send()
 }
-function editar(id) {
+function editar(id, conteudo_tarefa) {
 
     let form = document.createElement('form')
-    form.action = '#'
+    form.action = './app_lista_tarefas/tarefa_controller.php?acao=atualizar'
     form.method = 'POST'
+    form.className = 'row'
 
     let inputTarefa = document.createElement('input')
     inputTarefa.type = 'text'
     inputTarefa.name = 'tarefa'
-    inputTarefa.className = 'form-control'
+    inputTarefa.value = conteudo_tarefa
+    inputTarefa.className = 'col-9 form-control'
+
+    let inputID = document.createElement('input')
+    inputID.type = 'hidden'
+    inputID.name = 'id'
+    inputID.value = id
 
     let button = document.createElement('button')
     button.type = 'submit'
-    button.className = 'btn btn-info'
+    button.className = 'col-3 btn btn-info'
     button.innerHTML = 'Atualizar'
 
     form.appendChild(inputTarefa)
+    form.appendChild(inputID)
     form.appendChild(button)
 
 
-    let tarefa_id = document.getElementById('tarefa_'+id)
-aaaaaaaa
-    // tarefa_id.innerHTML = ''
+    let tarefa = document.getElementById('tarefa_'+id)
+    tarefa.innerHTML = ''
 
-    tarefa_id.insertBefore(form, tarefa)
+    tarefa.insertBefore(form, tarefa[0])
 }

@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="css/estilo.css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-		<script src="./script.js"></script>
+		<script src="scripts.js"></script>
 	</head>
 
 	<body>
@@ -22,6 +22,11 @@
 		<?php	if(isset($_GET['inclusao']) && $_GET['inclusao'] ==  1 ) { ?>
 			<div class="bg-success pt-2 text-white d-flex justify-content-center" id="inserido">
 				<h5>Tarefa inserida com sucesso!</h5>
+			</div>
+		<?php } ?>
+		<?php	if(isset($_GET['atualizado']) && $_GET['atualizado'] ==  1 ) { ?>
+			<div class="bg-success pt-2 text-white d-flex justify-content-center" id="inserido">
+				<h5>Tarefa atualizada com sucesso!</h5>
 			</div>
 		<?php } ?>
 		<div class="container app">
