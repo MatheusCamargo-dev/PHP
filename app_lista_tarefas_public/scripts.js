@@ -13,7 +13,6 @@ function requisitarPagina(url){
     let active_2 = document.getElementById('active_2')
     let active_3 = document.getElementById('active_3')
     let inserido = document.getElementById('inserido')
-
     if(url == 'tarefas_pendentes.php'){
         active_1.className = 'list-group-item active'
         active_2.className = 'list-group-item'
