@@ -6,6 +6,6 @@
 	<label>Descrição da tarefa:</label>
 	<input type="text" class="form-control" name="tarefa" placeholder="Exemplo: Lavar o carro">
 	</div>
-	<!-- teste -->
+	teste
 	<button class="btn btn-success">Cadastrar</button>
 </form>
