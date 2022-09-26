@@ -2,7 +2,7 @@
     
 
     $acao = isset($_GET['acao']) ? $_GET['acao'] : $acao ;
-    
+    // echo $acao;
     if($acao == 'inserir'){
         require "./tarefa.model.php";
         require "./tarefa.service.php";
@@ -43,9 +43,24 @@
         $conexao = new Conexao();
 
         $tarefaService = new TarefaService($conexao, $tarefa);
-        if($atualiza = $tarefaService->atualizar()){
+        if($tarefaService->atualizar()){
             header('Location: ../index.php?atualizado=1');
+        }   
+    } else if($acao == 'remover'){
+        require "./tarefa.model.php";
+        require "./tarefa.service.php";
+        require "./conexao.php";
+        
+        $tarefa = new Tarefa();
+        $tarefa->__set('id', $_GET['id']);
+        $tarefa->__set('tarefa', $_GET['tarefa']);
+        $conexao = new Conexao();
+
+        $tarefaService = new TarefaService($conexao, $tarefa);
+        if($tarefaService->remover()){
+            header('Location: ../index.php?removido=sucesso&tarefa='.$_GET['tarefa']);
         }
+
 
     }
 ?>

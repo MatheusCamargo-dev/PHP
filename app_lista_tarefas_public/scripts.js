@@ -95,3 +95,7 @@ function editar(id, conteudo_tarefa) {
 
     tarefa.insertBefore(form, tarefa[0])
 }
+
+function remover(id){
+    location.href = 'tarefa_controller.php?acao=remover&id='
+}
