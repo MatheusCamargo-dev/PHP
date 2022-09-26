@@ -128,7 +128,7 @@
 		<?php } ?>
 		<?php	if(isset($_GET['atualizado']) && $_GET['atualizado'] ==  1 ) { ?>
 			<div class="bg-success pt-2 text-white d-flex justify-content-center" id="inserido">
-				<h5>Tarefa atualizada com sucesso!</h5>
+				<h5>Tarefa atualizada com sucesso!!!!</h5>
 			</div>
 		<?php } ?>
 		<?php	if(isset($_GET['removido']) && $_GET['removido'] ==  'sucesso' ) { ?>
