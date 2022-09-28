@@ -40,11 +40,34 @@
             return $stmt->execute();
         }
 
+        public function marcarRealizado(){
+            $query = 'UPDATE tb_tarefas set id_status = ? where id = ?';
+            $stmt = $this->conexao->prepare($query);
+            $stmt->bindValue(1, $this->tarefa->__get('id_status'));
+            $stmt->bindValue(2, $this->tarefa->__get('id'));
+            return $stmt->execute();
+        }
+
         public function remover(){
             $query = 'DELETE FROM tb_tarefas where id = ?';
             $stmt = $this->conexao->prepare($query);
             $stmt->bindValue(1, $this->tarefa->__get('id'));
             return $stmt->execute();
+        }
+
+        public function recuperarTarefasPendentes(){
+            $query = "SELECT 
+             t.id, s.status, t.tarefa 
+            FROM 
+             tb_tarefas as t
+            left join
+             tb_status as s on (t.id_status = s.id)
+            where
+            s.status = 'pendente'
+            ";
+            $stmt = $this->conexao->prepare($query);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
         }
 
     }

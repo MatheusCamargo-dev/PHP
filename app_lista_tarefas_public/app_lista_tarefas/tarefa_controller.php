@@ -62,5 +62,32 @@
         }
 
 
+    } else if($acao == 'marcarRealizado'){
+        require "./tarefa.model.php";
+        require "./tarefa.service.php";
+        require "./conexao.php";
+        
+        $tarefa = new Tarefa();
+        $tarefa->__set('id', $_GET['id']);
+        $tarefa->__set('id_status', 2);
+
+        $conexao = new Conexao();
+
+        $tarefaService = new TarefaService($conexao, $tarefa);
+
+        if($tarefaService->marcarRealizado()){
+            header('Location: ../index.php?marcar_realizado=sucesso');
+        }   
+    }
+    else if($acao == 'recuperarTarefasPendentes'){
+        require "./app_lista_tarefas/tarefa.model.php";
+        require "./app_lista_tarefas/tarefa.service.php";
+        require "./app_lista_tarefas/conexao.php";
+
+        $tarefa = new Tarefa();
+        $conexao = new Conexao();
+
+        $tarefaService = new TarefaService($conexao, $tarefa);
+        $tarefasPendentes = $tarefaService->recuperarTarefasPendentes();   
     }
 ?>

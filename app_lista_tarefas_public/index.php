@@ -109,6 +109,10 @@
 			function remover(id, tarefa){
 				location.href = 'app_lista_tarefas/tarefa_controller.php?acao=remover&id='+id+'&tarefa='+tarefa
 			}
+
+			function marcarRealizado(id){
+				location.href = 'app_lista_tarefas/tarefa_controller.php?acao=marcarRealizado&id='+id
+			}
 		</script>
 	</head>
 
@@ -150,25 +154,7 @@
 					<div class="container pagina">
 						<div class="row">
 							<div class="col" id="conteudo">
-								<h4>Tarefas pendentes</h4>
-								<hr />
-								<div class="row mb-3 d-flex align-items-center tarefa">
-									<div class="col-sm-9">Lavar o carro</div>
-									<div class="col-sm-3 mt-2 d-flex justify-content-between">
-										<i class="fas fa-trash-alt fa-lg text-danger"></i>
-										<i class="fas fa-edit fa-lg text-info"></i>
-										<i class="fas fa-check-square fa-lg text-success"></i>
-									</div>
-								</div>
-
-								<div class="row mb-3 d-flex align-items-center tarefa">
-									<div class="col-sm-9">Passear com o cachorro</div>
-									<div class="col-sm-3 mt-2 d-flex justify-content-between">
-										<i class="fas fa-trash-alt fa-lg text-danger"></i>
-										<i class="fas fa-edit fa-lg text-info"></i>
-										<i class="fas fa-check-square fa-lg text-success"></i>
-									</div>
-								</div>
+								<?php include 'tarefas_pendentes.php';?>
 							</div>
 						</div>
 					</div>
